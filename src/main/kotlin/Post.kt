@@ -19,9 +19,9 @@ data class Likes(
 )
 object WallService {
     private var posts = emptyArray<Post>()
-    private var LastId = 0
+    private var lastId = 0
     fun add(post: Post): Post {
-        posts += post.copy(id = ++LastId)
+        posts += post.copy(id = ++lastId)
         return posts.last()
     }
     fun update(postNew: Post): Boolean {
@@ -35,7 +35,7 @@ object WallService {
     }
     fun clear() {
         posts = emptyArray()
-        LastId = 1
+        lastId = 0
     }
     fun printPosts() {
         for (post in posts) {

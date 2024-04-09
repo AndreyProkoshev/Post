@@ -16,7 +16,7 @@ class WallServiceTest {
             "Hello", 1, false, true, 2,
         )
         val addPost = WallService.add(post)
-        assertNotEquals(1, addPost.id)
+        assertNotEquals(0, addPost.id)
     }
 
     @Test
@@ -24,7 +24,7 @@ class WallServiceTest {
         val post = Post(1,1,1,1,1,
             "Hello",1,false,true,2,)
         WallService.add(post)
-        val updatePost = Post(2,1,1,1,1,
+        val updatePost = Post(1,1,1,1,1,
             "Привет",1,false,true,2,)
         val result = WallService.update(updatePost)
         assertEquals(result, true)
